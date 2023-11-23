@@ -81,12 +81,12 @@ print("\033[92m All tests passed!")
 
 # 1. Based on their formulation, what are the **difference** among Cross-entropy, DICE, and IOU?  
 # 
-#     Cross-entropy is used more often as a proy as a way to make it easier to maximise using back propogation as in  back propagtion knowing the result had large loss the reason as to why can be looked back on and analysed. However DICE and IOU are used to directly maximise metrics. IOU penalises under and over-segmentation more than DICE, meaning that if there are too many or not enough segments when tryring to regognize parts of an image, IOU will be much harsher. In IOU the union is used in the denominator however the union is absent in calculation in DICE. Other than that DICE and IOU are very similar.
+#     Cross-entropy is a loss function used in classification tasks, including image segmentation. Cross-entropy measures the dissimilarity between the predicted probability distribution and the true distribution of the classes. It penalizes the model more when it is confidently wrong. The Dice coefficient is calculated as the intersection of the predicted and true segmentation masks divided by the average of the sizes of the two masks. It is commonly used in binary segmentation tasks and provides a measure of the spatial overlap between the predicted and true segmentation masks. It ranges from 0 to 1, where 1 indicates a perfect overlap. IOU penalises under and over-segmentation more than DICE, meaning that if there are too many or not enough segments when tryring to regognize parts of an image, IOU will be much harsher. In IOU the union is used in the denominator however the union is absent in calculation in DICE. Other than that DICE and IOU are very similar.
 #     
 # 
 # 2. How might the choice of architecture, such as U-Net or FFN, affect the performance and application suitability of your semantic segmentation model?
 # 
-#     U-Net is able to handle much larger images and create much more accurate image segmentation. If using multiple classes per image U-Net is also preferable. In U-Net architecture, it converts an image into a vector and back again using the same methods
+#     U-Net is able to handle much larger images and create much more accurate image segmentation. If using multiple classes per image U-Net is also preferable. In U-Net architecture, it converts an image into a vector and back again using the same methods. It is good at capturing fine details. FNNs are composed of layers of neurons where information flows in one direction, from the input layer to the output layer, without loops or skip connections. Advantages are simplicity and ease of training, especially for simpler tasks, and lower computational requirements compared to more complex architectures.
 
 # In[ ]:
 
